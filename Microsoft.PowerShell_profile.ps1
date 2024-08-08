@@ -65,6 +65,8 @@ function pyv {
 
 Invoke-Expression (&starship init powershell)
 Import-Module PSReadLine
+Import-Module posh-git
+Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion"
 
 . $PSScriptRoot"\databrickscli_completion.ps1"
 . $PSScriptRoot"\dbx_completion.ps1"
