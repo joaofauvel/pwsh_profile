@@ -23,30 +23,6 @@ function dbc {
     databricks.exe clusters $args
 }
 
-function dbcls {
-    <#
-    .SYNOPSIS
-    databricks clusters list
-    #>
-    databricks.exe clusters list
-}
-
-function dbcstart {
-    <#
-    .SYNOPSIS
-    databricks clusters start $clusterid
-    #>
-    databricks.exe clusters start $args
-}
-
-function dbcget {
-    <#
-    .SYNOPSIS
-    State of databricks $clusterid
-    #>
-    databricks.exe clusters get $args
-}
-
 function dbcstate {
     <#
     .SYNOPSIS
@@ -67,6 +43,7 @@ Invoke-Expression (&starship init powershell)
 Import-Module PSReadLine
 Import-Module posh-git
 Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion"
+Import-Module posh-docker
 
 . $PSScriptRoot"\databrickscli_completion.ps1"
 . $PSScriptRoot"\dbx_completion.ps1"
